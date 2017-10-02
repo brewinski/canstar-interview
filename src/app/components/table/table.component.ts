@@ -16,7 +16,7 @@ export class TableComponent implements OnInit {
   posts: ExampleDataSource;
   displayedColumns: Array<any> = ['userId', 'id', 'title', 'body'];
   @ViewChild(MdPaginator) paginator: MdPaginator;
-  private postLength: number;
+  postLength: number;
 
   constructor(private jsonPostsService: JsonPostsService) {  }
 

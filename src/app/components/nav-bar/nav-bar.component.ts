@@ -14,7 +14,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
   }
 
-  private onToggleMenuEvent(): void {
+   onToggleMenuEvent(): void {
     this.ToggleMenuEvent.emit(null);
   }
 

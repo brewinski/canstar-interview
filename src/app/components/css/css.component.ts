@@ -9,8 +9,8 @@ import { User } from '../../models/models';
   providers: [JsonPostsService]
 })
 export class CssComponent implements OnInit {
-  private users: User[];
-  private columns: number = 3;
+  users: User[];
+  columns: number = 3;
 
   constructor(private jsonPostsService: JsonPostsService) { }
 
@@ -20,7 +20,7 @@ export class CssComponent implements OnInit {
     window.dispatchEvent(new Event('resize'));
   }
 
-  private onResize(event): void {
+  onResize(event): void {
     console.log(event);
     if(event.currentTarget.innerWidth > 1384) {
      this.columns = 3 
