@@ -17,19 +17,20 @@ export class CssComponent implements OnInit {
   async ngOnInit() {
     const users = await this.jsonPostsService.getAllUsers();
     this.users = users;
-    // window.dispatchEvent(new Event('resize'));
+    this.onResize(null);
   }
 
   onResize(event): void {
     console.log(event);
-    if(event.currentTarget.innerWidth > 1384) {
+    
+    if(window.innerWidth > 1384) {
      this.columns = 3 
     }
-    if(event.currentTarget.innerWidth < 1384) {
+    if(window.innerWidth < 1384) {
       this.columns = 2
     }
 
-    if(event.currentTarget.innerWidth < 960) {
+    if(window.innerWidth < 960) {
       this.columns = 1
     }
   } 
