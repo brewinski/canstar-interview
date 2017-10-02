@@ -1,0 +1,52 @@
+<h1>Posts Table Example</h1>
+<p>Populated from mock json service "https://jsonplaceholder.typicode.com". This table displays posts for all users.</p>
+<md-card class="posts-card">
+  <md-card-header>
+    <md-card-title>Posts Table</md-card-title>
+    <md-card-subtitle>Displays all posts for all users.</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <md-table #table [dataSource]="posts">
+      
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+            
+      
+      <!-- Position Column -->
+      <ng-container mdColumnDef="userId">
+        <md-header-cell *mdHeaderCellDef> User Id </md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.userId}} </md-cell>
+      </ng-container>
+      
+      <!-- Name Column -->
+      <ng-container mdColumnDef="id">
+        <md-header-cell *mdHeaderCellDef> Post Id </md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.id}} </md-cell>
+      </ng-container>
+      
+      <!-- Weight Column -->
+      <ng-container mdColumnDef="title">
+        <md-header-cell *mdHeaderCellDef> Title </md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.title}} </md-cell>
+      </ng-container>
+      
+      <!-- Color Column -->
+      <ng-container mdColumnDef="body">
+        <md-header-cell *mdHeaderCellDef> Body </md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.body}} </md-cell>
+      </ng-container>
+      
+      <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+      <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+      
+    </md-table>
+  </md-card-content>
+  <md-card-actions>
+    <md-paginator #paginator
+      [length]="postLength"
+      [pageIndex]="0"
+      [pageSize]="25"
+      [pageSizeOptions]="[5, 10, 25, 100]">
+  </md-paginator>
+  </md-card-actions>
+</md-card>
