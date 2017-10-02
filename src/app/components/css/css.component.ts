@@ -17,7 +17,7 @@ export class CssComponent implements OnInit {
   async ngOnInit() {
     const users = await this.jsonPostsService.getAllUsers();
     this.users = users;
-    window.dispatchEvent(new Event('resize'));
+    // window.dispatchEvent(new Event('resize'));
   }
 
   onResize(event): void {
