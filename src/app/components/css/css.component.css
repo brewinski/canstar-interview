@@ -40,3 +40,9 @@
 .example-header-image {
     background: #1e282c;
 }
+
+@media screen and (max-width: 480px) {
+    .card:hover {
+        transform: rotateY(180deg);
+    }
+}
