@@ -3,9 +3,6 @@
 }
 
 .card {
-    position: relative;
-    color: white;
-    text-align: center;
     max-width: 350px;
     min-width: 325px;
     height: 250px;
@@ -33,10 +30,6 @@
     backface-visibility: hidden;
 }
 
-.example-card {
-    width: 100%;
-    backface-visibility: hidden;
-}
 .example-header-image {
     background: #1e282c;
 }

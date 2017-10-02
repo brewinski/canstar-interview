@@ -15,22 +15,20 @@ import { HomeComponent } from './components/home/home.component';
 import { DataPopulationComponent } from './components/data-population/data-population.component';
 import { WidgetComponent } from './components/widget/widget.component';
 import { CssComponent } from './components/css/css.component';
+import { UsercardWidgetComponent } from './components/usercard-widget/usercard-widget.component';
 
 const appRoutes: Routes = [
-  {path: 'home', component: HomeComponent},
   {path: 'table-example', component: TableComponent},
-  {path: 'data-example', component: DataPopulationComponent},
   {path: 'widget-example', component: WidgetComponent},
   {path: 'css-example', component: CssComponent},  
   { 
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/widget-example',
     pathMatch: 'full'
   },
   { path: '**', component: PagenotfoundComponent }
 ];
 
-let a = "";
 
 @NgModule({
   declarations: [
@@ -41,7 +39,8 @@ let a = "";
     HomeComponent,
     DataPopulationComponent,
     WidgetComponent,
-    CssComponent
+    CssComponent,
+    UsercardWidgetComponent
   ],
   imports: [
     BrowserModule,
